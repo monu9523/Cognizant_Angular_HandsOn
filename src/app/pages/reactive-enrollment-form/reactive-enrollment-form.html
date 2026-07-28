@@ -1,0 +1,81 @@
+<div class="container">
+
+  <h2>Reactive Enrollment Form</h2>
+
+  <form [formGroup]="enrollForm" (ngSubmit)="onSubmit()">
+
+    <!-- Student Name -->
+    <label>Student Name</label>
+    <input type="text" formControlName="studentName">
+    <span class="error" *ngIf="enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['required']">
+      Name is required.
+    </span>
+    <span class="error" *ngIf="enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['minlength']">
+      Name must be at least 3 characters.
+    </span>
+
+    <!-- Student Email — async validator fires after sync validators pass -->
+    <label>Student Email</label>
+    <input type="email" formControlName="studentEmail">
+    <span class="error" *ngIf="enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['required']">
+      Email is required.
+    </span>
+    <span class="error" *ngIf="enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['email']">
+      Enter a valid email address.
+    </span>
+    <!-- emailTaken shown without touched check — async result should always display -->
+    <span class="error" *ngIf="enrollForm.get('studentEmail')?.errors?.['emailTaken']">
+      Email already taken.
+    </span>
+
+    <!-- Course ID — custom noCourseCode sync validator (Step 53) -->
+    <label>Course ID</label>
+    <input type="text" formControlName="courseId">
+    <span class="error" *ngIf="enrollForm.get('courseId')?.touched && enrollForm.get('courseId')?.errors?.['required']">
+      Course ID is required.
+    </span>
+    <!-- Step 54 — custom validator error message -->
+    <span class="error" *ngIf="enrollForm.get('courseId')?.touched && enrollForm.get('courseId')?.errors?.['noCourseCode']">
+      Course code starting with XX is not allowed.
+    </span>
+
+    <!-- Preferred Semester -->
+    <label>Preferred Semester</label>
+    <select formControlName="preferredSemester">
+      <option>Odd</option>
+      <option>Even</option>
+    </select>
+
+    <!-- Agree to Terms — Validators.requiredTrue requires checkbox to be checked -->
+    <div class="checkbox">
+      <input type="checkbox" formControlName="agreeToTerms">
+      <label>I Agree to Terms</label>
+    </div>
+    <span class="error" *ngIf="enrollForm.get('agreeToTerms')?.touched && enrollForm.get('agreeToTerms')?.errors?.['required']">
+      You must agree to the terms.
+    </span>
+
+    <hr>
+
+    <!-- FormArray — dynamic repeating controls (Step 56) -->
+    <h3>Additional Courses</h3>
+
+    <button type="button" (click)="addCourse()">Add Another Course</button>
+
+    <!-- Step 56 — render FormArray controls with index for removal -->
+    <div *ngFor="let ctrl of additionalCourses.controls; let i = index">
+      <input [formControl]="ctrl">
+      <button type="button" (click)="removeCourse(i)">Remove</button>
+    </div>
+
+    <br>
+
+    <!-- Disabled only while async validator is pending —
+         submit is always enabled so user can attempt submission and see all errors -->
+    <button type="submit" [disabled]="enrollForm.pending">
+      Submit
+    </button>
+
+  </form>
+
+</div>

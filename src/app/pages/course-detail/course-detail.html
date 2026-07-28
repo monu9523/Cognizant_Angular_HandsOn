@@ -1,0 +1,20 @@
+<div class="container">
+
+  <button (click)="goBack()">← Back to Courses</button>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <div *ngIf="course; else notFound">
+    <h2>{{ course.name }}</h2>
+    <p><strong>Code:</strong> {{ course.code }}</p>
+    <p><strong>Credits:</strong> {{ course.credits }}</p>
+    <p><strong>Grade Status:</strong>
+      <span [class]="course.gradeStatus">{{ course.gradeStatus }}</span>
+    </p>
+  </div>
+
+  <ng-template #notFound>
+    <p>Course not found.</p>
+  </ng-template>
+
+</div>

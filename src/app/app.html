@@ -1,0 +1,10 @@
+<app-header></app-header>
+
+<app-notification></app-notification>
+
+<!-- Global loading spinner — shown on every HTTP request via loadingInterceptor -->
+<div class="spinner-overlay" *ngIf="loadingService.isLoading$ | async">
+  <div class="spinner"></div>
+</div>
+
+<router-outlet></router-outlet>

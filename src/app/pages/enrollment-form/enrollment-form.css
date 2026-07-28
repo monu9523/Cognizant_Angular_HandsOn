@@ -1,0 +1,127 @@
+.container {
+
+    width: 500px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background: #b4cee2;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 20px rgba(0,0,0,.15);
+
+}
+
+h2 {
+
+    text-align: center;
+
+    color: #2563eb;
+
+    margin-bottom: 25px;
+
+}
+
+label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+}
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 10px;
+
+    margin-top: 5px;
+
+    border-radius: 5px;
+
+    border: 1px solid #ccc;
+
+    font-size: 15px;
+
+}
+
+.checkbox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+}
+
+.checkbox input {
+
+    width: auto;
+
+}
+
+button {
+
+    margin-top: 20px;
+
+    margin-right: 10px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+button:disabled {
+
+    background: gray;
+
+    cursor: not-allowed;
+
+}
+
+.error {
+
+    color: red;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+
+}
+
+.success {
+
+    margin-top: 20px;
+
+    color: green;
+
+    font-weight: bold;
+
+}
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+    border: 2px solid green;
+}

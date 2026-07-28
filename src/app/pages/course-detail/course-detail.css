@@ -1,0 +1,24 @@
+.container {
+  width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+button {
+  padding: 8px 16px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+h2 { margin-top: 10px; }
+
+.passed { color: green; font-weight: bold; }
+.failed { color: red; font-weight: bold; }
+.pending { color: orange; font-weight: bold; }

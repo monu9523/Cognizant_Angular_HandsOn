@@ -1,0 +1,34 @@
+{
+  "courses": [
+    { "id": 1,  "name": "Angular",                  "code": "ANG101",  "credits": 4, "gradeStatus": "passed"  },
+    { "id": 2,  "name": "Java",                      "code": "JAVA102", "credits": 3, "gradeStatus": "pending" },
+    { "id": 3,  "name": "React",                     "code": "REA103",  "credits": 5, "gradeStatus": "failed"  },
+    { "id": 4,  "name": "Python",                    "code": "PY104",   "credits": 2, "gradeStatus": "passed"  },
+    { "id": 5,  "name": "SQL",                       "code": "SQL105",  "credits": 1, "gradeStatus": "pending" },
+    { "id": 6,  "name": "C Programming",             "code": "C106",    "credits": 3, "gradeStatus": "passed"  },
+    { "id": 7,  "name": "C++ Programming",           "code": "CPP107",  "credits": 4, "gradeStatus": "failed"  },
+    { "id": 8,  "name": "Data Structures",           "code": "DS108",   "credits": 4, "gradeStatus": "passed"  },
+    { "id": 9,  "name": "Algorithms",                "code": "ALG109",  "credits": 4, "gradeStatus": "pending" },
+    { "id": 10, "name": "Database Management System","code": "DBMS110", "credits": 4, "gradeStatus": "passed"  },
+    { "id": 11, "name": "Operating Systems",         "code": "OS111",   "credits": 3, "gradeStatus": "failed"  },
+    { "id": 12, "name": "Computer Networks",         "code": "CN112",   "credits": 3, "gradeStatus": "pending" },
+    { "id": 13, "name": "Software Engineering",      "code": "SE113",   "credits": 4, "gradeStatus": "passed"  },
+    { "id": 14, "name": "Cloud Computing",           "code": "CC114",   "credits": 4, "gradeStatus": "passed"  },
+    { "id": 15, "name": "Machine Learning",          "code": "ML115",   "credits": 5, "gradeStatus": "pending" },
+    { "id": 16, "name": "Artificial Intelligence",   "code": "AI116",   "credits": 5, "gradeStatus": "failed"  },
+    { "id": 17, "name": "Cyber Security",            "code": "CS117",   "credits": 4, "gradeStatus": "passed"  },
+    { "id": 18, "name": "Internet of Things",        "code": "IOT118",  "credits": 3, "gradeStatus": "pending" },
+    { "id": 19, "name": "DevOps",                    "code": "DEV119",  "credits": 4, "gradeStatus": "passed"  },
+    { "id": 20, "name": "AWS Cloud Practitioner",    "code": "AWS120",  "credits": 3, "gradeStatus": "passed"  }
+  ],
+  "students": [
+    { "id": 1, "name": "Alice Johnson", "email": "alice@example.com" },
+    { "id": 2, "name": "Bob Smith", "email": "bob@example.com" },
+    { "id": 3, "name": "Carol White", "email": "carol@example.com" }
+  ],
+  "enrollments": [
+    { "id": 1, "courseId": 1, "studentId": 1 },
+    { "id": 2, "courseId": 2, "studentId": 1 },
+    { "id": 3, "courseId": 1, "studentId": 2 }
+  ]
+}

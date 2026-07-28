@@ -1,0 +1,32 @@
+<div class="container">
+
+  <h2>Student Profile</h2>
+
+  <h3>Enrolled Courses</h3>
+
+  <ng-container *ngIf="enrolledCourses$ | async as enrolledCourses">
+
+    <p *ngIf="enrolledCourses.length === 0">No courses enrolled yet.</p>
+
+    <table *ngIf="enrolledCourses.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Code</th>
+          <th>Credits</th>
+          <th>Grade Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of enrolledCourses">
+          <td>{{ course.name }}</td>
+          <td>{{ course.code }}</td>
+          <td>{{ course.credits }}</td>
+          <td>{{ course.gradeStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </ng-container>
+
+</div>

@@ -1,0 +1,46 @@
+<ng-container *ngIf="{ enrolled: isEnrolled$ | async } as vm">
+
+<div
+  class="card"
+  [ngClass]="{
+    'card--enrolled': vm.enrolled,
+    'card--full': course.credits >= 4,
+    'expanded': isExpanded
+  }"
+  [ngStyle]="{ 'border-left': '8px solid ' + borderColor() }">
+
+  <h3>{{ course.name }}</h3>
+
+  <p><strong>ID:</strong> {{ course.id }}</p>
+
+  <p><strong>Code:</strong> {{ course.code }}</p>
+
+  <p><strong>Credits:</strong> {{ course.credits | creditLabel }}</p>
+
+  <div [ngSwitch]="course.gradeStatus">
+    <span *ngSwitchCase="'passed'" class="passed">Passed</span>
+    <span *ngSwitchCase="'failed'" class="failed">Failed</span>
+    <span *ngSwitchDefault class="pending">Pending</span>
+  </div>
+
+  <br>
+
+  <!-- Enroll/Unenroll dispatches to NgRx store -->
+  <button (click)="toggleEnrollment(!!vm.enrolled); $event.stopPropagation()">
+    {{ vm.enrolled ? 'Unenroll' : 'Enroll' }}
+  </button>
+
+  <button (click)="toggleDetails(); $event.stopPropagation()">
+    {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+  </button>
+
+  <div *ngIf="isExpanded" class="details">
+    <hr>
+    <p><strong>Course ID:</strong> {{ course.id }}</p>
+    <p><strong>Course Code:</strong> {{ course.code }}</p>
+    <p><strong>Credits:</strong> {{ course.credits }}</p>
+  </div>
+
+</div>
+
+</ng-container>

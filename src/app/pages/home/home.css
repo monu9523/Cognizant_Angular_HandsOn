@@ -1,0 +1,104 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #6d0c90;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #555;
+  font-size: 22px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Button */
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* Success message */
+.message {
+  color: green;
+  font-weight: bold;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* Search Box */
+input {
+  width: 350px;
+  padding: 12px;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  font-size: 16px;
+  margin: 20px 0;
+  outline: none;
+}
+
+input:focus {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+.search-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: linear-gradient(135deg, #bf93ea, #c7f29e);
+  width: 190px;
+  padding: 28px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: #1d27b5;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.card p {
+  font-size: 38px;
+  font-weight: bold;
+  color: #111827;
+}
