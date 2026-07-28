@@ -225,5 +225,5 @@ ng test --coverage  # Tests + coverage report
 
 ## 👤 Author
 
-**Monu** — Digital Nurture 5.0, .NET Full Stack Engineer Track  
+**Roshni Kumari Singh** — Digital Nurture 5.0, .NET Full Stack Engineer Track  
 GitHub: [@monu9523](https://github.com/monu9523)
